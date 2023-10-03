@@ -457,3 +457,27 @@
     </div>
 </section>
 <!-- ***** Kids Area Ends ***** -->
+<section class="section" id="kids">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Contact us</h2>
+                    <span>We waititng for your letter!</span>
+                </div>
+            </div>
+        </div>
+        <form asp-controller="MailSend" asp-action="SendEmail" method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Email</button>
+        </form>
+    </div>
+</section>
+
