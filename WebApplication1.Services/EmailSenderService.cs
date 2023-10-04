@@ -15,7 +15,7 @@ namespace WebApplication1.Services
         public async Task SendEmailAsync(string email, string subject, string message)
         {
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("Your Name", "your_email@example.com"));
+            emailMessage.From.Add(new MailboxAddress("pervak222", "pervak222@gmail.com"));
             emailMessage.To.Add(new MailboxAddress("", email));
             emailMessage.Subject = subject;
 
@@ -26,8 +26,8 @@ namespace WebApplication1.Services
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync("smtp.example.com", 587, false);
-                await client.AuthenticateAsync("your_username", "your_password");
+                await client.ConnectAsync("smtp.elasticemail.com", 2525, false);
+                await client.AuthenticateAsync("pervak222@gmail.com", "74007E1CDED615AFFE9BED476C4CA3B222BD");
                 await client.SendAsync(emailMessage);
                 await client.DisconnectAsync(true);
             }
